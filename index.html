@@ -3,26 +3,30 @@
         <!--TAG para confirmação de caracteres (acentos)-->
         <meta charset="UTF-8"/>
         <title>Wallisom Alves | Portfólio</title>
-        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="styles.css">
         <link href="img/icone.png" rel="shortcut icon"/> <!--TAG para adicionar ícone na aba do navegador-->
     </head>
     <body>
-        <header> <!--Cabeçalho do conteúdo da página-->
-            <nav> <!--Menu-->
+        <header class="cabecalho"> <!--Cabeçalho do conteúdo da página-->
+          <div class="container">
+            <a href="#" class="nome">
+              &lt;<span>Wallisom</span>/&gt;
+            </a>
+            <nav class="menu"> <!--Menu-->
                 <a href="#sobre">Sobre</a>
-                Formação
-                Cursos
-                Projetos
-                Contatos
+                <a href="#formacao">Formação</a>
+                <a href="#cursos">Cursos</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contatos">Contatos</a>
             </nav>
+          </div>
         </header>
         <main> <!--Conteúdo principal da página--> 
             <section> <!--Área de apresentação-->
                 <h1>Wallisom Alves</h1>
-                <h3>Desenvolvedor Front-End em formação</h3>
+                <h3>Desenvolvedor em formação</h3>
                 <p>Estudante de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em interfaces simples, acessíveis e bonitas. Aqui você encontra minha formação, os cursos que já fiz e projetos em que coloquei a mão no código.</p>
-                <img src="https://uploads.onecompiler.io/44zhfnzez/1787875191495/perfil.jpeg" width="30%"
-">
+                <img src="https://uploads.onecompiler.io/44zhfnzez/1787875191495/perfil.jpeg" width="30%"">
             </section>
 
             <section id="sobre"> <!--Área Sobre Mim-->
@@ -36,15 +40,32 @@
                 </ul>
             </section>
 
-            <section> <!--Área de Formação Acadêmica-->
-                <p>Tecnólogo Análise e Desenvolvimento de Sistemas - Senai Vila Mariana</p>
-                <p>2026 - atual</p>
-                <p>Técnico Redes de Computadores - Senai Roberto Simonsen</p>
-                <p>2024 - 2025</p>
+            <section id="formacao"> <!--Área de Formação Acadêmica-->
+              <p><strong>Formação Acadêmica:</strong></p>
+              <p>Tecnólogo Análise e Desenvolvimento de Sistemas - Senai Vila Mariana</p>
+              <p>2026 - atual</p>
+              <p>Técnico Redes de Computadores - Senai Roberto Simonsen</p>
+              <p>2024 - 2025</p>
             </section>
 
-            <section> <!--Cursos e certificados-->
+            <section id="cursos"> <!--Cursos e certificados-->
+              <p><strong>Cursos e Certificados: </strong></p>
+              <p>Economia Circular - Senai</p>
+              <p>Desvendando o 5G - Senai</p>
+              <p>Competência Transversal Segurança no Trabalho - Senai</p>
+              <p>Competência Transversal Tecnologia da Informação e Comunicação - Senai</p>
+              <p>Privacidade e Proteção de Dados - Senai</p>
+              <p>Algoritmo - Curso em Vídeo</p>
+            </section>
 
+            <section id="projetos">
+              
+            </section>
+
+            <section id="contatos">
+              <p><strong>Contatos:</strong></p>
+              <p>Celular: (11)98333-0013</p>
+              <p>Gmail: wallisom51@gmail.com</p>
             </section>
         </main>
     </body>
