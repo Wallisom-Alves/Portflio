@@ -1,0 +1,94 @@
+/*=================================
+    Variavéis de estilização
+    Paleta de Cores: #998b82 Marrom / #fca89d Rosa / #ffe1c9 Creme / #afc7b9 Verde Bebê
+*/
+:root {
+    /*Cores*/
+    --cor-fundo: #fca89d;
+    --cor-texto: #101828;
+    --cor-borda: #e4e7ec;
+    --cor-texto-variacao: magenta;
+    
+    /*Fontes*/
+    --fonte-titulo: "Space Grotesk";
+    --fonte-texto: "Tahoma";
+    --fonte-mono: "JetBrains Mono"
+}
+/*=================================*/
+/*Limpa as margens e espaçamentos da página*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Configuração da rolagem da página*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*ESTILIZAÇÃO DO BODY*/
+body{
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+h1 {
+    color: #1a48a5;
+}
+/*Limpa a configuração padrão dos links*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*=================================
+    CABEÇALHO DA PÁGINA
+*/
+.cabecalho{
+    position: sticky;
+    background-color: rgba(245,247,250,0.85);
+    backdrop-filter: blur(8px);
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--cor-borda);
+}
+.cabecalho .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.menu {
+    display: flex;
+    gap: 32px;
+}
+.menu a{
+    font-size: 20px;
+    padding-bottom: 4px;
+    position: relative;
+}
+.menu a::after{
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--cor-texto-variacao);
+    transition: width 0.25s ease;
+    position: absolute;
+}
+.menu a:hover::after{
+    width: 100%;
+}
+
+.nome {
+    font-family: var(--fonte-mono);
+    font-size: 28px;
+    font-weight: bold;
+}
+.nome span{
+    color: var(--cor-texto-variacao);
+}
+/*=================================*/
