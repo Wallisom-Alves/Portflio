@@ -1,0 +1,558 @@
+                 /*=================================
+    Variavéis de estilização
+    Paleta de Cores: #998b82 Marrom / #fca89d Rosa / #ffe1c9 Creme / #afc7b9 Verde Bebê
+*/
+:root {
+    /*Cores*/
+/* Cores da Paleta */
+--cor-fundo: #000007;    /*certo*/
+    --cor-fundo-alt: #010e1f; /*CERTO*/
+    --cor-texto: #B08D57; /*certo*/       
+    --cor-texto-suave: #EFEFEF; /*certo*/
+    --cor-texto-variacao: #B08D57;
+    --cor-titulo-tag: #142130; /*certo*/
+    --cor-borda: #0A1931;   /*certo*/      
+    --cor-primaria-clara: #B08D57; 
+    --cor-primaria: #B08D57;
+    /*Fontes*/
+    --fonte-titulo: 'Inter', system-ui, sans-serif;
+    --fonte-texto: 'Inter', system-ui, sans-serif;
+    --fonte-mono: 'JetBrains Mono', 'monospace'
+}
+/*=================================*/
+/*Limpa as margens e espaçamentos da página*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Configuração da rolagem da página*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*ESTILIZAÇÃO DO BODY*/
+body{
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+h1 {
+    color: var(--cor-texto-variacao);
+}
+/*Limpa a configuração padrão dos links*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Estilização padrão dos títulos tipo "tag HTML" de cada seção*/
+.tag-secao{
+    display: inline-block;
+    font-family: var(--fonte-mono);
+    font-size: 26px;
+    color: var(--cor-texto);
+    background-color: var(--cor-borda);
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+/*Estilização padrão para os CONTAINER do main*/
+.container{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0;
+    padding: 0 24px;
+}
+
+/*Estilização padrão de botões*/
+.botao{
+    display: inline-block;
+    font-family: var(--fonte-texto);
+    font-size: 16
+
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover{
+    transform: translateY(2px);
+}
+
+/*Estilo do primeiro botão*/
+.botao-primario{
+    background-color: var(--cor-primaria-clara);
+    color: var(--cor-texto-suave);
+    box-shadow: 0 2px 20px var(--cor-primaria-clara);
+}
+
+.botao-primario:hover{
+    background-color: var(--cor-primaria-clara);
+}
+
+/*Estilo do primeiro botão*/
+.botao-secundario{
+    border: 2px solid var(--cor-primaria-clara);
+    color: var(--cor-texto);
+}
+
+.botao-secundario:hover{
+    border-color: var(--cor-primaria-clara);
+    color: var(--cor-primaria-clara);
+}
+
+/*Estilização padrão para o título da seção*/
+.titulo-secao {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+/*Estilização padrão para o sub-título da seção*/
+.subtitulo-secao {
+  color: var(--cor-texto-suave);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+
+/*=================================
+    CABEÇALHO DA PÁGINA
+*/
+.cabecalho{
+    position: sticky;
+    background-color: var(--cor-borda);
+    backdrop-filter: blur(8px);
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--cor-borda);
+}
+.cabecalho .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.menu {
+    display: flex;
+    gap: 32px;
+}
+.menu a{
+    font-size: 20px;
+    padding-bottom: 4px;
+    position: relative;
+}
+.menu a::after{
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--cor-texto-variacao);
+    transition: width 0.25s ease;
+    position: absolute;
+}
+.menu a:hover::after{
+    width: 100%;
+}
+
+.nome {
+    font-family: var(--fonte-mono);
+    font-size: 28px;
+    font-weight: bold;
+}
+.nome span{
+    color: var(--cor-texto);
+}
+/*=================================*/
+
+/*==============APRESENTAÇÃO==============*/
+.apresentacao{
+    padding: 96px;
+    background-color: var(--cor-fundo);
+}
+
+.apresentacao .container{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center ;
+}
+
+.apresentacao-titulo{
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.apresentacao-titulo .destaque{
+    color: var(--cor-texto-suave);
+}
+
+.apresentacao-cargo{
+    font-family: var(--fonte-titulo);
+    color: var(--cor-texto-suave);
+    font-size: 20px;
+    margin: 20px;
+}
+
+.apresentacao-bio{
+    color: var(--cor-texto-suave);
+    font-size: 20px;
+    max-width: 480px;
+    margin-bottom: 20px;
+}
+
+.apresentacao-foto img{
+    border-radius: 24px;
+background-color: rgba(245,247,250,0.85);
+}
+
+/* --------------------------------------------------------------------------
+  SOBRE MIM
+   Grid de 2 colunas: texto + lista de informações rápidas.
+-------------------------------------------------------------------------- */
+.sobre {
+  padding: 96px 0; /*Espaço interno acima e abaixo da seção*/
+  background-color: var(--cor-fundo-alt); /*Fundo branco, destacando esta seção do resto da página*/
+}
+
+.sobre .container > .tag-secao, /*Explicar para os alunos: quando coloca > .tag-secao, estou dizendo que somente o .tag-secao que está dentro de .sobre e .container vai receber a classe abaixo. Os outros não recebem.*/
+.sobre .container > .titulo-secao,
+.sobre .container > .subtitulo-secao {
+  text-align: left; /*Garante alinhamento à esquerda, mesmo que algo mude o padrão no futuro*/
+}
+
+.sobre-grid {
+  display: grid; /*Organiza o conteúdo da seção em colunas*/
+  grid-template-columns: 1.3fr 0.7fr; /*Duas colunas: texto mais larga que a lista de informações*/
+  gap: 48px; /*Espaço entre as duas colunas*/
+}
+
+.sobre-texto p {
+  margin-bottom: 16px; /*Espaço entre os parágrafos do texto*/
+  color: var(--cor-texto-suave); /*Cor de menor contraste, para o texto corrido*/
+  font-size: 18px;
+}
+
+.info-rapida {
+  background-color: var(--cor-fundo); /*Fundo do cartão de informações rápidas*/
+  border-radius: 16px; /*Arredonda os cantos do cartão*/
+  padding: 32px; /*Espaçamento interno do cartão*/
+}
+
+.info-rapida li {
+  display: flex; /*Alinha o rótulo e o valor lado a lado*/
+  justify-content: space-between; /*Empurra o rótulo para a esquerda e o valor para a direita*/
+  padding: 12px 0; /*Espaço acima e abaixo de cada linha*/
+  border-bottom: 1px solid var(--cor-borda); /*Linha fina separando cada item da lista*/
+  font-size: 18px; /*Tamanho do texto de cada item*/
+}
+
+.info-rapida li:last-child {
+  border-bottom: none; /*Remove a linha do último item, para não sobrar uma borda solta no final*/
+}
+
+.info-rapida .rotulo {
+  color: var(--cor-texto-suave); /*Cor suave, diferenciando o rótulo do valor*/
+  font-family: var(--fonte-mono); /*Fonte monoespaçada, reforçando a estética de código*/
+  font-size: 14px; /*Tamanho do texto do rótulo, menor que o valor*/
+}
+
+/* --------------------------------------------------------------------------
+   CURSOS
+   Grid responsivo: o navegador decide sozinho quantas colunas cabem,
+   com auto-fit + minmax. Chamado de grid "inteligente".
+   -------------------------------------------------------------------------- */
+.cursos {
+  padding: 96px 0; /*Espaço interno acima e abaixo da seção*/
+  background-color: var(--cor-fundo-alt); /*Fundo branco, mesma lógica usada em "sobre"*/
+}
+
+.cursos-grid {
+  display: grid; /*Organiza os cursos em grade*/
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /*Cria quantas colunas de ~240px couberem na tela*/
+  gap: 24px; /*Espaço entre os cartões*/
+}
+
+.curso-card {
+  background-color: var(--cor-fundo); /*Fundo salmão do cartão, contrastando com o branco da seção*/
+  border-radius: 16px; /*Arredonda os cantos do cartão*/
+  padding: 28px; /*Espaçamento interno do cartão*/
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /*Anima suavemente a posição e a sombra no hover*/
+}
+
+.curso-card:hover {
+  transform: translateY(-4px); /*Sobe o cartão 4px ao passar o mouse*/
+  box-shadow: 0 8px 24px var(--cor-borda); /*Adiciona sombra só no hover, dando sensação de profundidade*/
+}
+
+.curso-icone {
+  font-size: 24px; /*Tamanho do emoji/ícone do curso*/
+  margin-bottom: 16px; /*Espaço abaixo do ícone*/
+}
+
+.curso-card h3 {
+  font-size: 18px; /*Tamanho do nome do curso*/
+  margin-bottom: 6px; /*Espaço abaixo do título*/
+}
+
+.curso-card p {
+  color: var(--cor-texto-suave); /*Cor suave para a descrição do curso*/
+  font-size: 16px; /*Tamanho do texto da descrição*/
+  margin-bottom: 16px; /*Espaço abaixo da descrição*/
+}
+
+.curso-carga {
+  font-family: var(--fonte-mono); /*Fonte monoespaçada, reforçando a estética de código*/
+  font-size: 18px; /*Tamanho do texto da carga horária*/
+  color: var(--cor-texto-suave); /*Cor de destaque*/
+  background-color: var(--cor-fundo-alt); /*Fundo claro atrás do texto*/
+  padding: 4px 10px; /*Espaçamento interno, formato de pílula*/
+  border-radius: 6px; /*Arredonda os cantos da etiqueta*/
+}
+
+/* --------------------------------------------------------------------------
+   FORMAÇÃO ACADÊMICA 
+   -------------------------------------------------------------------------- */
+.formacao {
+  padding: 96px 0; /*Espaço interno acima e abaixo da seção*/
+  background-color: var(--cor-fundo);
+}
+
+.linha-tempo {
+  padding-left: 22px; /*Espaço padrão de uma lista, só o suficiente pro marcador aparecer*/
+}
+
+.item-tempo {
+  margin-bottom: 28px; /*Espaço entre um item da formação e o próximo*/
+}
+
+.item-tempo::marker {
+  color: var(--cor-titulo-tag); /*Pinta o marcador que a lista já desenha sozinha, na cor de destaque do site*/
+  font-size: 16px; /*Deixa o marcador um pouco maior, sem precisar mexer no tamanho do texto*/
+}
+
+.periodo {
+  font-family: var(--fonte-mono); /*Fonte monoespaçada, reforçando a estética de código*/
+  font-size: 13px; /*Tamanho do texto do período*/
+  color: var(--cor-primaria-clara); /*Cor de destaque, chamando atenção pra data*/
+  margin-bottom: 4px; /*Espaço abaixo da data*/
+}
+
+.instituicao{
+  color: var(--cor-texto-suave);
+}
+
+/* --------------------------------------------------------------------------
+  PROJETOS
+  Cada projeto é um cartão com imagem, texto e "tags" de tecnologia.
+-------------------------------------------------------------------------- */
+.projetos {
+  padding: 96px 0; /*Espaço interno acima e abaixo da seção*/
+  background-color: var(--cor-fundo);
+}
+
+.projetos-grid {
+  display: grid; /*Organiza os projetos em grade*/
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*Cria quantas colunas de ~300px couberem na tela, sozinho*/
+  gap: 32px; /*Espaço entre os cartões*/
+}
+
+.projeto-card {
+  background-color: var(--cor-fundo-alt); /*Fundo branco do cartão*/
+  border-radius: 16px; /*Arredonda os cantos do cartão*/
+  overflow: hidden; /*Esconde qualquer parte da imagem que ultrapasse os cantos arredondados*/
+  box-shadow: var(--sombra-card); /*Sombra padrão do site, dando profundidade ao cartão*/
+  transition: transform 0.2s ease; /*Anima suavemente a posição no hover*/
+}
+
+.projeto-card:hover {
+  transform: translateY(-6px); /*Sobe o cartão 6px ao passar o mouse*/
+}
+
+.projeto-imagem {
+  aspect-ratio: 3 / 2; /*Mantém a proporção 3:2, não importa o tamanho da imagem original*/
+  overflow: hidden; /*Corta qualquer parte da imagem que ultrapasse essa proporção*/
+}
+
+.projeto-imagem img {
+  width: 100%; /*Imagem preenche toda a largura do espaço reservado*/
+  height: 100%; /*Imagem preenche toda a altura do espaço reservado*/
+  object-fit: cover; /*Corta a imagem para preencher o espaço, sem distorcer nem esticar*/
+}
+
+.projeto-corpo {
+  padding: 24px; /*Espaçamento interno da parte de texto do cartão*/
+}
+
+.projeto-corpo h3 {
+  font-size: 18px; /*Tamanho do título do projeto*/
+  margin-bottom: 8px; /*Espaço abaixo do título*/
+}
+
+.projeto-corpo p {
+  color: var(--cor-texto-suave); /*Cor suave para a descrição*/
+  font-size: 14px; /*Tamanho do texto da descrição*/
+  margin-bottom: 16px; /*Espaço abaixo da descrição*/
+}
+
+.projeto-tags {
+  display: flex; /*Alinha as etiquetas de tecnologia lado a lado*/
+  flex-wrap: wrap; /*Quebra para a próxima linha se não couberem todas*/
+  gap: 8px; /*Espaço entre as etiquetas*/
+  margin-bottom: 20px; /*Espaço abaixo do grupo de etiquetas*/
+}
+
+.projeto-tags span {
+  font-family: var(--fonte-mono); /*Fonte monoespaçada, reforçando a estética de código*/
+  font-size: 14px; /*Tamanho do texto de cada etiqueta*/
+  background-color: var(--cor-fundo); /*Fundo da etiqueta*/
+  border: 1px solid var(--cor-borda); /*Contorno sutil*/
+  padding: 4px 10px; /*Espaçamento interno, formato de pílula*/
+  border-radius: 6px; /*Arredonda os cantos da etiqueta*/
+}
+
+.projeto-links {
+  display: flex; /*Alinha os links lado a lado*/
+  gap: 20px; /*Espaço entre os links*/
+  font-size: 14px; /*Tamanho do texto dos links*/
+  font-weight: 600; /*Deixa os links em negrito*/
+}
+
+.projeto-links a {
+  color: var(--cor-primaria); /*Cor de destaque*/
+}
+
+.projeto-links a:hover {
+  text-decoration: underline; /*Sublinha o link ao passar o mouse*/
+}
+
+/* --------------------------------------------------------------------------
+   CONTATO / RODAPÉ
+   Seção escura para fechar o site com contraste em relação ao resto
+   da página, reforçando que é a "última parada".
+-------------------------------------------------------------------------- */
+.contato {
+  padding: 96px 0 48px; /*Três valores: espaço em cima, nos lados (0) e embaixo — menor embaixo por ser a última seção da página*/
+  background-color: var(--cor-fundo-alt); /*Fundo escuro, destacando esta seção como o fechamento do site*/
+  color: #ffffff; /*Texto branco, para contrastar com o fundo escuro*/
+  text-align: center; /*Centraliza todo o conteúdo da seção*/
+}
+
+.contato .tag-secao {
+  background-color: rgba(255, 255, 255, 0.1); /*Sobrescreve o fundo padrão da etiqueta por um tom claro e translúcido, adequado ao fundo escuro*/
+}
+
+.contato .titulo-secao {
+  color: var(--cor-primaria); /*Sobrescreve a cor do título para branco, já que o padrão é escuro*/
+}
+
+.contato .subtitulo-secao {
+  color: rgba(255, 255, 255, 0.6); /*Branco com transparência, criando um texto mais suave que o título*/
+  margin: 0 auto 40px; /*Centraliza o bloco e adiciona espaço abaixo dele*/
+}
+
+.contato-botoes {
+  display: flex; /*Alinha os botões lado a lado*/
+  justify-content: center; /*Centraliza os botões horizontalmente*/
+  gap: 16px; /*Espaço entre os botões*/
+  margin-bottom: 64px; /*Espaço abaixo do grupo de botões*/
+  flex-wrap: wrap; /*Quebra para a próxima linha em telas menores*/
+}
+
+.redes-sociais {
+  display: flex; /*Alinha os ícones/links de redes sociais lado a lado*/
+  justify-content: center; /*Centraliza o grupo horizontalmente*/
+  gap: 24px; /*Espaço entre os links*/
+  margin-bottom: 40px; /*Espaço abaixo do grupo*/
+}
+
+.redes-sociais a {
+  font-family: var(--fonte-mono); /*Fonte monoespaçada, reforçando a estética de código*/
+  font-size: 0.9rem; /*Tamanho do texto de cada link*/
+  color: rgba(255, 255, 255, 0.7); /*Branco quase opaco, legível mas suave*/
+  border: 1px solid rgba(255, 255, 255, 0.2); /*Contorno sutil e translúcido*/
+  padding: 8px 16px; /*Espaçamento interno, formato de pílula*/
+  border-radius: 999px; /*Cantos totalmente arredondados, mesmo truque dos botões*/
+  transition: border-color 0.2s ease, color 0.2s ease; /*Anima suavemente a cor e o contorno no hover*/
+}
+
+.redes-sociais a:hover {
+  border-color: var(--cor-primaria); /*Contorno destaca na cor de destaque do site ao passar o mouse*/
+  color: var(--cor-primaria); /*Texto acompanha a mesma cor*/
+}
+
+.rodape-texto {
+  font-size: 0.8rem; /*Tamanho pequeno, discreto*/
+  color: rgba(255, 255, 255, 0.4); /*Branco bem apagado, o elemento de menor destaque da seção*/
+  font-family: var(--fonte-mono); /*Fonte monoespaçada, reforçando a estética de código*/
+}
+/* --------------------------------------------------------------------------
+   BOTÃO DO MENU MOBILE (HAMBÚRGUER)
+   Por padrão fica escondido — só aparece dentro da media query, quando o
+   menu grande não cabe mais na tela.
+-------------------------------------------------------------------------- */
+.menu-toggle {
+  display: none; /*Escondido no desktop — o menu grande (.menu) já aparece*/
+  font-size: 28px; /*Tamanho do ícone ☰*/
+  background: none; /*Remove o fundo padrão de botão*/
+  border: none; /*Remove a borda padrão de botão*/
+  color: var(--cor-texto); /*Mesma cor usada no resto do cabeçalho*/
+  cursor: pointer; /*Indica que é clicável*/
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE
+   Media query: a partir daqui, essas regras substituem as de cima — mas só
+   quando a largura da tela for 860px ou menos.
+-------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+
+  /*APRESENTAÇÃO: as duas colunas (texto + foto) viram uma só, empilhadas*/
+  .apresentacao .container {
+    grid-template-columns: 1fr; /*Era 1.1fr 0.9fr (2 colunas) — agora 1 coluna só*/
+    text-align: center; /*Centraliza o texto, já que a foto também fica centralizada*/
+  }
+
+  .apresentacao-texto {
+    min-width: 0; /*Sem isso, um item de grid nunca encolhe menos que o conteúdo mais largo (o título) — e empurra a página pra fora da tela*/
+  }
+
+  .apresentacao-titulo {
+    font-size: 48px; /*Era 80px — grande demais pra uma tela de celular*/
+  }
+
+  .apresentacao-bio {
+    max-width: 100%; /*Era 480px — usa a largura toda disponível*/
+    margin-left: auto; /*Centraliza o bloco de texto*/
+    margin-right: auto;
+  }
+
+  .apresentacao-botoes {
+    justify-content: center; /*Centraliza os botões, já que o texto está centralizado*/
+  }
+
+  .apresentacao-foto {
+    width: 100%; /*Era 70% — ocupa a largura toda, já que não divide mais coluna com o texto*/
+    margin-top: 32px; /*Espaço entre o texto e a foto, agora que estão empilhados*/
+  }
+
+  /*SOBRE MIM: mesma lógica — texto e lista de informações viram 1 coluna*/
+  .sobre-grid {
+    grid-template-columns: 1fr; /*Era 1.3fr 0.7fr — agora empilhados*/
+  }
+
+  /*MENU: esconde o menu grande, mostra o botão hambúrguer no lugar dele*/
+  .menu {
+    display: none; /*Não cabe mais na tela — some até termos JavaScript pra abrir/fechar*/
+  }
+
+  .menu-toggle {
+    display: block; /*Agora aparece, já que o menu grande sumiu*/
+  }
+} 
