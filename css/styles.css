@@ -555,4 +555,24 @@ background-color: rgba(245,247,250,0.85);
   .menu-toggle {
     display: block; /*Agora aparece, já que o menu grande sumiu*/
   }
-} 
+  /*MENU ABERTO: o JS adiciona a classe .aberto e o menu reaparece como lista*/
+  .menu.aberto {
+    display: flex; /*Sobrescreve o display:none de cima — o menu volta a aparecer*/
+    flex-direction: column; /*Links um embaixo do outro, em vez de lado a lado*/
+    position: absolute; /*Sai do fluxo e fica "pendurado" no cabeçalho*/
+    top: 100%; /*Começa exatamente onde o cabeçalho termina*/
+    left: 0; /*Alinha à esquerda da tela*/
+    right: 0; /*Alinha à direita — ocupa a largura toda*/
+    padding: 24px; /*Espaço interno ao redor dos links*/
+    gap: 20px; /*Espaço entre um link e outro*/
+    background-color: var(--cor-borda); /*Cor de Fundo do menu*/
+    border-bottom: 1px solid var(--cor-fundo); /*Linha fina na base, igual à do cabeçalho*/
+  }
+}
+
+.saudacao{
+  font-family: var(--fonte-mono);
+  font-size: 20px;
+  color: var(--cor-primaria);
+  margin-bottom: 12px;
+}
